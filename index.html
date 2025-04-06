@@ -1368,7 +1368,8 @@
             mapChart.showLoading();
             
             // 加载省级地图
-            const mapURL = 'https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json';
+            // 修改为相对路径，避免跨域问题
+            const mapURL = 'china_map_data.json';
             
             fetch(mapURL)
                 .then(response => response.json())
