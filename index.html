@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中国过敏原地图 - 基于卫健委数据的过敏信息可视化平台</title>
+    <title>过敏原地图 - 过敏信息可视化</title>
     
     <!-- SEO元信息 -->
     <meta name="description" content="全国各省过敏原分布可视化平台，提供吸入性、食物型过敏原地理分布数据">
@@ -107,8 +107,7 @@
     <style>
       @font-face {
         font-family: 'Alibaba PuHuiTi';
-        /* 使用更可靠的Google Fonts替代，避免字体加载错误 */
-        src: local('Alibaba PuHuiTi'), local('PingFang SC'), local('Microsoft YaHei');
+        src: url('https://res.cloudinary.com/dbljlw7so/raw/upload/v1620307676/AlibabaPuHuiTi-Regular_peurid.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
         font-display: swap;
@@ -1368,8 +1367,8 @@
             // 设置加载中状态
             mapChart.showLoading();
             
-            // 加载省级地图 - 使用GitHub上的可靠CDN资源
-            const mapURL = 'https://raw.githubusercontent.com/apache/echarts/master/test/data/map/json/china.json';
+            // 加载省级地图
+            const mapURL = 'https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json';
             
             fetch(mapURL)
                 .then(response => response.json())
