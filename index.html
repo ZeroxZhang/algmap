@@ -107,7 +107,8 @@
     <style>
       @font-face {
         font-family: 'Alibaba PuHuiTi';
-        src: url('https://res.cloudinary.com/dbljlw7so/raw/upload/v1620307676/AlibabaPuHuiTi-Regular_peurid.ttf') format('truetype');
+        /* 使用更可靠的Google Fonts替代，避免字体加载错误 */
+        src: local('Alibaba PuHuiTi'), local('PingFang SC'), local('Microsoft YaHei');
         font-weight: normal;
         font-style: normal;
         font-display: swap;
@@ -1367,8 +1368,8 @@
             // 设置加载中状态
             mapChart.showLoading();
             
-            // 加载省级地图
-            const mapURL = 'https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json';
+            // 加载省级地图 - 使用GitHub上的可靠CDN资源
+            const mapURL = 'https://raw.githubusercontent.com/apache/echarts/master/test/data/map/json/china.json';
             
             fetch(mapURL)
                 .then(response => response.json())
